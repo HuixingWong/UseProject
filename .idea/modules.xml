@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/androidkotlin/androidkotlin.iml" filepath="$PROJECT_DIR$/androidkotlin/androidkotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/datepickeruse/datepickeruse.iml" filepath="$PROJECT_DIR$/datepickeruse/datepickeruse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/definview/definview.iml" filepath="$PROJECT_DIR$/definview/definview.iml" />
       <module fileurl="file://$PROJECT_DIR$/doubledatepicker/doubledatepicker.iml" filepath="$PROJECT_DIR$/doubledatepicker/doubledatepicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/floatingrecycleview/floatingrecycleview.iml" filepath="$PROJECT_DIR$/floatingrecycleview/floatingrecycleview.iml" />
       <module fileurl="file://$PROJECT_DIR$/greendaouse/greendaouse.iml" filepath="$PROJECT_DIR$/greendaouse/greendaouse.iml" />
