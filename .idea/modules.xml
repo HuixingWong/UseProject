@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/UseProject.iml" filepath="$PROJECT_DIR$/UseProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidkotlin/androidkotlin.iml" filepath="$PROJECT_DIR$/androidkotlin/androidkotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/datepickeruse/datepickeruse.iml" filepath="$PROJECT_DIR$/datepickeruse/datepickeruse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doubledatepicker/doubledatepicker.iml" filepath="$PROJECT_DIR$/doubledatepicker/doubledatepicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/floatingrecycleview/floatingrecycleview.iml" filepath="$PROJECT_DIR$/floatingrecycleview/floatingrecycleview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/greendaouse/greendaouse.iml" filepath="$PROJECT_DIR$/greendaouse/greendaouse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mutiltasklisten/mutiltasklisten.iml" filepath="$PROJECT_DIR$/mutiltasklisten/mutiltasklisten.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mylibrary/mylibrary.iml" filepath="$PROJECT_DIR$/mylibrary/mylibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/passwordtesting/passwordtesting.iml" filepath="$PROJECT_DIR$/passwordtesting/passwordtesting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxjavause/rxjavause.iml" filepath="$PROJECT_DIR$/rxjavause/rxjavause.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slide/slide.iml" filepath="$PROJECT_DIR$/slide/slide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/timecponunt/timecponunt.iml" filepath="$PROJECT_DIR$/timecponunt/timecponunt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/timepicker3/timepicker3.iml" filepath="$PROJECT_DIR$/timepicker3/timepicker3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/toolbarcal/toolbarcal.iml" filepath="$PROJECT_DIR$/toolbarcal/toolbarcal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/utilsmoudle/utilsmoudle.iml" filepath="$PROJECT_DIR$/utilsmoudle/utilsmoudle.iml" />
+    </modules>
+  </component>
+</project>

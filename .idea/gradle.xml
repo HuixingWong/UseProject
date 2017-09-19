@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/androidkotlin" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/datepickeruse" />
+            <option value="$PROJECT_DIR$/doubledatepicker" />
+            <option value="$PROJECT_DIR$/floatingrecycleview" />
+            <option value="$PROJECT_DIR$/greendaouse" />
+            <option value="$PROJECT_DIR$/mutiltasklisten" />
+            <option value="$PROJECT_DIR$/mylibrary" />
+            <option value="$PROJECT_DIR$/passwordtesting" />
+            <option value="$PROJECT_DIR$/rxjavause" />
+            <option value="$PROJECT_DIR$/slide" />
+            <option value="$PROJECT_DIR$/timecponunt" />
+            <option value="$PROJECT_DIR$/timepicker3" />
+            <option value="$PROJECT_DIR$/toolbarcal" />
+            <option value="$PROJECT_DIR$/utilsmoudle" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
