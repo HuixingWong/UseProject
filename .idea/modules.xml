@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UseProject.iml" filepath="$PROJECT_DIR$/UseProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidkotlin/androidkotlin.iml" filepath="$PROJECT_DIR$/androidkotlin/androidkotlin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/datepickeruse/datepickeruse.iml" filepath="$PROJECT_DIR$/datepickeruse/datepickeruse.iml" />
       <module fileurl="file://$PROJECT_DIR$/definview/definview.iml" filepath="$PROJECT_DIR$/definview/definview.iml" />
       <module fileurl="file://$PROJECT_DIR$/designpattern/designpattern.iml" filepath="$PROJECT_DIR$/designpattern/designpattern.iml" />
@@ -19,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/timecponunt/timecponunt.iml" filepath="$PROJECT_DIR$/timecponunt/timecponunt.iml" />
       <module fileurl="file://$PROJECT_DIR$/timepicker3/timepicker3.iml" filepath="$PROJECT_DIR$/timepicker3/timepicker3.iml" />
       <module fileurl="file://$PROJECT_DIR$/toolbarcal/toolbarcal.iml" filepath="$PROJECT_DIR$/toolbarcal/toolbarcal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trueapp/trueapp.iml" filepath="$PROJECT_DIR$/trueapp/trueapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/utilsmoudle/utilsmoudle.iml" filepath="$PROJECT_DIR$/utilsmoudle/utilsmoudle.iml" />
     </modules>
   </component>

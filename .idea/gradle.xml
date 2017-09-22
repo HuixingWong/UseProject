@@ -9,7 +9,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/androidkotlin" />
-            <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/datepickeruse" />
             <option value="$PROJECT_DIR$/definview" />
             <option value="$PROJECT_DIR$/designpattern" />
@@ -24,6 +23,7 @@
             <option value="$PROJECT_DIR$/timecponunt" />
             <option value="$PROJECT_DIR$/timepicker3" />
             <option value="$PROJECT_DIR$/toolbarcal" />
+            <option value="$PROJECT_DIR$/trueapp" />
             <option value="$PROJECT_DIR$/utilsmoudle" />
           </set>
         </option>
