@@ -1,5 +1,13 @@
 package com.example.magicsqure;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.os.CountDownTimer;
+import android.os.HandlerThread;
+import android.os.Message;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
@@ -16,6 +24,8 @@ import com.example.magicsqure.util.ScreenUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 public class ImagePredictonActivity extends AppCompatActivity {
 
@@ -28,6 +38,20 @@ public class ImagePredictonActivity extends AppCompatActivity {
     private   int mScreenwidth;
     private   int mScreenheight;
     private int mCount = 0;
+    private final  int TUICHU = 1;
+
+    private android.os.Handler mHandler = new android.os.Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+
+                case TUICHU:
+                    finish();
+                    break;
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +123,30 @@ public class ImagePredictonActivity extends AppCompatActivity {
 
         mPager.setAdapter(adapter);
 
+        mPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                if (position == 2){
+
+                    Toast.makeText(ImagePredictonActivity.this, ""+position, Toast.LENGTH_SHORT).show();
+
+                    mHandler.sendEmptyMessageDelayed(TUICHU, 4000);//启动handler，间隔4 second start
+
+                }
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
     }
 
@@ -109,24 +157,25 @@ public class ImagePredictonActivity extends AppCompatActivity {
         int j = (int) (y / mScreenheight);
 
 
-
-
         return 4*j+i+1;
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
 
+        float x=0,y = 0;
+
         switch (ev.getAction()){
 
             case MotionEvent.ACTION_DOWN:
 
-                float x = ev.getX();
-                float y = ev.getY();
-
+                 x = ev.getX();
+                 y = ev.getY();
                 int count = dealCount(x, y);
                 Toast.makeText(this, ""+count, Toast.LENGTH_SHORT).show();
                 break;
+
+            case MotionEvent.ACTION_UP:
 
             default:
                 break;
