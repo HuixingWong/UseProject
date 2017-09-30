@@ -1,15 +1,22 @@
 package com.example.magicsqure;
 
+import android.Manifest;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.CountDownTimer;
 import android.os.HandlerThread;
 import android.os.Message;
 import android.os.SystemClock;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -20,8 +27,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.magicsqure.util.MyBitmapUtil;
+import com.example.magicsqure.util.PictureSaveUtil;
 import com.example.magicsqure.util.ScreenUtils;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Handler;
@@ -57,8 +68,38 @@ public class ImagePredictonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_predicton);
-
         initview();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode){
+
+            case 1:
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    Toast.makeText(this, "获得权限", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(this, "无权限，即将推出", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                return;
+
+        }
     }
 
     private void initview(){
@@ -132,9 +173,24 @@ public class ImagePredictonActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
 
+
                 if (position == 2){
 
-                    Toast.makeText(ImagePredictonActivity.this, ""+position, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(ImagePredictonActivity.this, ""+position, Toast.LENGTH_SHORT).show();
+
+//                    FileInputStream fis = null;
+//                    try {
+//                        fis = new FileInputStream("/sdcard/test.png");
+//                    } catch (FileNotFoundException e) {
+//                        e.printStackTrace();
+//                    }
+//                    Bitmap bitmap  = BitmapFactory.decodeStream(fis);
+
+                    Bitmap bitmap = MyBitmapUtil.readBitMap(ImagePredictonActivity.this,R.mipmap.ic_launcher);
+
+                    boolean b = PictureSaveUtil.saveImageToGallery(ImagePredictonActivity.this, bitmap);
+
+                    Toast.makeText(ImagePredictonActivity.this, ""+b, Toast.LENGTH_SHORT).show();
 
                     mHandler.sendEmptyMessageDelayed(TUICHU, 4000);//启动handler，间隔4 second start
 
@@ -162,6 +218,18 @@ public class ImagePredictonActivity extends AppCompatActivity {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+
+
+        if (ContextCompat.checkSelfPermission(MyApp.fetchcontext(),
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(ImagePredictonActivity.this,
+                    new String[]{Manifest.permission.READ_CONTACTS},1);
+
+        }else{
+            //
+        }
 
         float x=0,y = 0;
 
