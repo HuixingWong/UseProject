@@ -95,7 +95,6 @@ public class ImagePredictonActivity extends AppCompatActivity {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
                     Toast.makeText(this, "无权限，即将推出", Toast.LENGTH_SHORT).show();
-                    finish();
                 }
                 return;
 
