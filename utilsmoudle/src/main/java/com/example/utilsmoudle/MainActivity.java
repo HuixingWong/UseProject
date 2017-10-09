@@ -35,6 +35,11 @@ public class MainActivity extends AppCompatActivity implements TestCallback.OnFr
 
     }
 
+    /**
+     *  fragment向activity传递数据，在这个回调里面接收
+     * @param uri
+     */
+
     @Override
     public void onFragmentInteraction(String uri) {
 

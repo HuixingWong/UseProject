@@ -32,6 +32,7 @@ public class TestCallback extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     private Button btn;
+    private Button mTochartBtn;
 
     public TestCallback() {
         // Required empty public constructor
@@ -68,10 +69,17 @@ public class TestCallback extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.fragment_test_callback, container, false);
+
+        /**
+         * 按钮点击以后向Activity传递信息
+         */
         btn = (Button) inflate.findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /**
+                 * 调用发送信息的方法
+                 */
                 onButtonPressed("123456");
             }
         });
@@ -84,6 +92,9 @@ public class TestCallback extends Fragment {
 
     public void onButtonPressed(String uri) {
         if (mListener != null) {
+            /**
+             * 回调接口，向activity传递信息。
+             */
             mListener.onFragmentInteraction(uri);
         }
     }
@@ -114,6 +125,9 @@ public class TestCallback extends Fragment {
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
+     */
+    /**
+     * Fragment持有这个接口的实例，Activity继承这个接口
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
