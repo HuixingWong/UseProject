@@ -2,6 +2,7 @@ package com.example.utilsmoudle.TouchUtils;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.utilsmoudle.ChartActivity;
 import com.example.utilsmoudle.R;
 
 /**
@@ -81,6 +83,16 @@ public class TestCallback extends Fragment {
                  * 调用发送信息的方法
                  */
                 onButtonPressed("123456");
+            }
+        });
+
+        mTochartBtn = (Button) inflate.findViewById(R.id.to_chart_btn);
+        mTochartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                getActivity().startActivity(new Intent(getActivity(), ChartActivity.class));
+
             }
         });
         // Inflate the layout for this fragment
