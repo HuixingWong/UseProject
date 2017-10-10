@@ -13,6 +13,11 @@
         android:layout_height="wrap_content"
         android:text="123"
      />
+    <Button
+        android:id="@+id/white_xls_btn"
+        android:text="white xls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <FrameLayout
         android:id="@+id/container_a_c"
