@@ -117,20 +117,32 @@ public class MainActivity extends AppCompatActivity implements TestCallback.OnFr
                 int columnWidth = sheet.getColumnWidth(i);
 
                 /**
-                 * 获取某一行有多少列有内容
+                 * 获取默认行数，不知道什么鬼
                  */
                 int defaultColumnWidth = sheet.getDefaultColumnWidth();
 
+                float columnWidthInPixels = sheet.getColumnWidthInPixels(i);
+
                 Row row = sheet.getRow(i);
 
-                for (int j = 0; j < defaultColumnWidth; j++) {
+                short firstCellNum = row.getFirstCellNum();
+
+                int physicalNumberOfCells = row.getPhysicalNumberOfCells();
+
+                short lastCellNum = row.getLastCellNum();
+
+
+                for (int j = 0; j < physicalNumberOfCells; j++) {
 
 
                     Cell cell = row.getCell(j);
                     String s = cell.toString();
 
-                    Log.e("123", "sum: " + sum + " i:" + i + " j:" + j + "  stirng:  " + s);
-                    sum += 1;
+                    if (s!=null && s.length()>0){
+                        Log.e("123", "sum: " + sum + " i:" + i + " j:" + j + "  stirng:  " + s);
+                        sum += 1;
+                    }
+
 
                 }
 
