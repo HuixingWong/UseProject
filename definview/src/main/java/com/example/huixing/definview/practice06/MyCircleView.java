@@ -1,18 +1,22 @@
 package com.example.huixing.definview.practice06;
 
+import android.animation.Keyframe;
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.View;
 
 import static com.example.huixing.definview.Utils.dpToPixel;
 
 
-public class Practice06KeyframeView extends View {
+public class MyCircleView extends View {
     final float radius = dpToPixel(80);
 
     float progress = 0;
@@ -20,15 +24,15 @@ public class Practice06KeyframeView extends View {
 
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
-    public Practice06KeyframeView(Context context) {
+    public MyCircleView(Context context) {
         super(context);
     }
 
-    public Practice06KeyframeView(Context context, @Nullable AttributeSet attrs) {
+    public MyCircleView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public Practice06KeyframeView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MyCircleView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -68,5 +72,40 @@ public class Practice06KeyframeView extends View {
         paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.FILL);
         canvas.drawText((int) progress + "%", centerX, centerY - (paint.ascent() + paint.descent()) / 2, paint);
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+
+        Keyframe key1 = Keyframe.ofFloat(0,0);
+        Keyframe key2 = Keyframe.ofFloat(0.3f,60);
+        Keyframe key3 = Keyframe.ofFloat(0.5f,30);
+        Keyframe key4 = Keyframe.ofFloat(0.6f,80);
+        Keyframe key5 = Keyframe.ofFloat(0.7f,50);
+        Keyframe key6 = Keyframe.ofFloat(0.8f,90);
+        Keyframe key7 = Keyframe.ofFloat(0.9f,60);
+        Keyframe key8 = Keyframe.ofFloat(1,100);
+        if (progress != 0){
+            key8 = Keyframe.ofFloat(1,progress);
+        }
+
+
+
+
+        PropertyValuesHolder holdr = PropertyValuesHolder.ofKeyframe
+                ("progress",key1,key2,key3,key4,key5,key6,key7,key8);
+
+        ObjectAnimator animator = ObjectAnimator.
+                ofPropertyValuesHolder(this,holdr);
+
+        animator.setDuration(3000);
+        animator.setInterpolator(new FastOutSlowInInterpolator());
+        animator.start();
+    }
+
+
+    private void startAnimation(){
+
     }
 }

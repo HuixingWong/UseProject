@@ -4,19 +4,26 @@ import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.TypedArray;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.huixing.definview.R;
+
+import java.util.List;
 
 
 public class Practice06KeyframeLayout extends RelativeLayout {
     Practice06KeyframeView view;
     Button animateBt;
+    private List<Integer> mProgressList;
+
+    private int progress;
 
     public Practice06KeyframeLayout(Context context) {
         super(context);
@@ -24,10 +31,17 @@ public class Practice06KeyframeLayout extends RelativeLayout {
 
     public Practice06KeyframeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.CircleView);
+        progress = array.getInteger(0, 0);
     }
 
     public Practice06KeyframeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        super.onLayout(changed, l, t, r, b);
     }
 
     @Override
