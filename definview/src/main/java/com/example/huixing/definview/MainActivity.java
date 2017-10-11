@@ -1,5 +1,6 @@
 package com.example.huixing.definview;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 clockView.start();
+                startActivity(new Intent(MainActivity.this,TestCircleBarActivity.class));
             }
         });
     }
