@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TestCircleBarActivity"></activity>
+        <activity android:name=".TestCircleBarActivity" />
+        <activity android:name=".ToCircleActivity"></activity>
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ public class ToCircleActivity extends AppCompatActivity {
 
 
     private MyCircleView myCircleView;
+    private MyCircleView myCircleView2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,7 +17,9 @@ public class ToCircleActivity extends AppCompatActivity {
 
 
         myCircleView = (MyCircleView) findViewById(R.id.mycircle);
+        myCircleView2 = (MyCircleView) findViewById(R.id.mycircle2);
         myCircleView.setProgress(60);
+        myCircleView2.setProgress(90);
 
 
     }

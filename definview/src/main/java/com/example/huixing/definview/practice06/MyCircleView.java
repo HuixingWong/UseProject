@@ -13,14 +13,17 @@ import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.View;
 
+import java.util.Calendar;
+
 import static com.example.huixing.definview.Utils.dpToPixel;
 
 
 public class MyCircleView extends View {
-    final float radius = dpToPixel(80);
+    final float radius = dpToPixel(30);
 
     float progress = 0;
     RectF arcRectF = new RectF();
+    private int mAscent;
 
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
@@ -37,7 +40,7 @@ public class MyCircleView extends View {
     }
 
     {
-        paint.setTextSize(dpToPixel(40));
+        paint.setTextSize(dpToPixel(30));
         paint.setTextAlign(Paint.Align.CENTER);
     }
 
@@ -57,12 +60,20 @@ public class MyCircleView extends View {
         float centerX = getWidth() / 2;
         float centerY = getHeight() / 2;
 
-        paint.setColor(Color.parseColor("#E91E63"));
-        paint.setStyle(Paint.Style.STROKE);
+
+        paint.setColor(Color.GRAY);
         /**
          * 这一句是线头末尾的形状
          */
         paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(dpToPixel(10));
+        arcRectF.set(centerX - radius, centerY - radius, centerX + radius, centerY + radius);
+        canvas.drawArc(arcRectF, 135, 100 * 3.6f, false, paint);
+
+
+        paint.setColor(Color.parseColor("#E91E63"));
+
         paint.setStrokeWidth(dpToPixel(15));
         arcRectF.set(centerX - radius, centerY - radius, centerX + radius, centerY + radius);
 //        canvas.drawArc(arcRectF, 135, progress * 2.7f, false, paint);
@@ -71,7 +82,57 @@ public class MyCircleView extends View {
 
         paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.FILL);
+        paint.setTextSize(dpToPixel(15));
         canvas.drawText((int) progress + "%", centerX, centerY - (paint.ascent() + paint.descent()) / 2, paint);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+
+        setMeasuredDimension(measureWidth(widthMeasureSpec),
+                measureHeight(heightMeasureSpec));
+    }
+
+    private int measureHeight(int measureSpec) {
+        int result = 0;
+        int specMode = MeasureSpec.getMode(measureSpec);
+        int specSize = MeasureSpec.getSize(measureSpec);
+
+        mAscent = (int) paint.ascent();
+        if (specMode == MeasureSpec.EXACTLY) {
+            // We were told how big to be
+            result = specSize;
+        } else {
+            // Measure the text (beware: ascent is a negative number)
+            result = (int) (-mAscent + paint.descent()) + getPaddingTop()
+                    + getPaddingBottom();
+            if (specMode == MeasureSpec.AT_MOST) {
+                // Respect AT_MOST value if that was what is called for by measureSpec
+                result = Math.min(result, specSize);
+            }
+        }
+        return result;
+    }
+
+
+    private int measureWidth(int measureSpec) {
+        int result = 0;
+        int specMode = MeasureSpec.getMode(measureSpec);
+        int specSize = MeasureSpec.getSize(measureSpec);
+
+        if (specMode == MeasureSpec.EXACTLY) {
+            // We were told how big to be
+            result = specSize;
+        } else {
+            // Measure the text
+            result = getPaddingLeft() + getPaddingRight();
+            if (specMode == MeasureSpec.AT_MOST) {
+                // Respect AT_MOST value if that was what is called for by measureSpec
+                result = Math.min(result, specSize);
+            }
+        }
+
+        return result;
     }
 
     @Override
