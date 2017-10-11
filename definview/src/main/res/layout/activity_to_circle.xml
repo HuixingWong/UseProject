@@ -4,20 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.huixing.definview.ToCircleActivity">
-    <com.example.huixing.definview.practice06.MyCircleView
-        android:layout_weight="1"
-        android:id="@+id/mycircle"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
-    <com.example.huixing.definview.practice06.MyCircleView
-        android:layout_weight="1"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
-    <com.example.huixing.definview.practice06.MyCircleView
-        android:id="@+id/mycircle2"
-        android:layout_weight="1"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.huixing.definview.practice06.MyCircleView
+            android:id="@+id/more_inner"
+            android:layout_gravity="center"
+            app:strokecolor="#FE7E9F"
+            app:textsize="15"
+            app:circlesize="80"
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <com.example.huixing.definview.practice06.MyCircleView
+            android:id="@+id/inner"
+            android:layout_gravity="center"
+            app:strokecolor="#FE7E9F"
+            app:textsize="15"
+            app:circlesize="200"
+            android:layout_weight="1"
+            android:layout_width="300dp"
+            android:layout_height="300dp" />
+
+        <com.example.huixing.definview.practice06.MyCircleView
+            android:id="@+id/outer"
+            android:layout_gravity="center"
+            app:strokecolor="#FE7E9F"
+            app:textsize="15"
+            app:circlesize="320"
+            android:layout_weight="1"
+            android:layout_width="500dp"
+            android:layout_height="500dp" />
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.example.huixing.definview.practice06.MyCircleView
+            app:textsize="10"
+            app:circlesize="50"
+            android:layout_weight="1"
+            android:id="@+id/mycircle"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+        <com.example.huixing.definview.practice06.MyCircleView
+            app:strokecolor="#FE7E9F"
+            app:textsize="15"
+            app:circlesize="80"
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+        <com.example.huixing.definview.practice06.MyCircleView
+            app:strokecolor="#4FBDF2"
+            app:textsize="20"
+            app:circlesize="100"
+            android:id="@+id/mycircle2"
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

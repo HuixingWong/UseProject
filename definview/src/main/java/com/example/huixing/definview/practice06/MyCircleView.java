@@ -4,14 +4,18 @@ import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.graphics.SweepGradient;
 import android.support.annotation.Nullable;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.example.huixing.definview.R;
 
 import java.util.Calendar;
 
@@ -19,11 +23,14 @@ import static com.example.huixing.definview.Utils.dpToPixel;
 
 
 public class MyCircleView extends View {
-    final float radius = dpToPixel(30);
+    float radius = dpToPixel(30);
 
     float progress = 0;
     RectF arcRectF = new RectF();
     private int mAscent;
+
+    private int mCircleSize,mTextSize,mCircleColor,mStrokeWidth;
+
 
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
@@ -33,10 +40,16 @@ public class MyCircleView extends View {
 
     public MyCircleView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-    }
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.CircleView);
 
-    public MyCircleView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
+        mCircleSize = array.getInteger(R.styleable.CircleView_circlesize,80);
+        mTextSize = array.getInteger(R.styleable.CircleView_textsize,20);
+        mCircleColor = array.getColor(R.styleable.CircleView_strokecolor,Color.RED);
+        mStrokeWidth = array.getColor(R.styleable.CircleView_strokewidth,10);
+
+        radius = mCircleSize;
+        array.recycle();
+
     }
 
     {
@@ -72,17 +85,19 @@ public class MyCircleView extends View {
         canvas.drawArc(arcRectF, 135, 100 * 3.6f, false, paint);
 
 
-        paint.setColor(Color.parseColor("#E91E63"));
+        paint.setColor(mCircleColor);
 
-        paint.setStrokeWidth(dpToPixel(15));
+        /**
+         * 设置线条的宽度
+         */
+        paint.setStrokeWidth(dpToPixel(mStrokeWidth));
         arcRectF.set(centerX - radius, centerY - radius, centerX + radius, centerY + radius);
 //        canvas.drawArc(arcRectF, 135, progress * 2.7f, false, paint);
         canvas.drawArc(arcRectF, 135, progress * 3.6f, false, paint);
 //        canvas.drawCircle(centerX,centerY,progress * 3.6f,paint);
-
         paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.FILL);
-        paint.setTextSize(dpToPixel(15));
+        paint.setTextSize(dpToPixel(mTextSize));
         canvas.drawText((int) progress + "%", centerX, centerY - (paint.ascent() + paint.descent()) / 2, paint);
     }
 
