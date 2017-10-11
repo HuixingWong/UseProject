@@ -95,10 +95,13 @@ public class MyCircleView extends View {
 //        canvas.drawArc(arcRectF, 135, progress * 2.7f, false, paint);
         canvas.drawArc(arcRectF, 135, progress * 3.6f, false, paint);
 //        canvas.drawCircle(centerX,centerY,progress * 3.6f,paint);
-        paint.setColor(Color.BLACK);
-        paint.setStyle(Paint.Style.FILL);
-        paint.setTextSize(dpToPixel(mTextSize));
-        canvas.drawText((int) progress + "%", centerX, centerY - (paint.ascent() + paint.descent()) / 2, paint);
+        if (mTextSize>0){
+            paint.setColor(Color.BLACK);
+            paint.setStyle(Paint.Style.FILL);
+            paint.setTextSize(dpToPixel(mTextSize));
+            canvas.drawText((int) progress + "%", centerX, centerY - (paint.ascent() + paint.descent()) / 2, paint);
+        }
+
     }
 
     @Override

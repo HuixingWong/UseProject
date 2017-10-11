@@ -15,28 +15,28 @@
         <com.example.huixing.definview.practice06.MyCircleView
             android:id="@+id/more_inner"
             android:layout_gravity="center"
-            app:strokecolor="#FE7E9F"
-            app:textsize="15"
-            app:circlesize="80"
-            android:layout_weight="1"
-            android:layout_width="100dp"
-            android:layout_height="100dp" />
-
-        <com.example.huixing.definview.practice06.MyCircleView
-            android:id="@+id/inner"
-            android:layout_gravity="center"
-            app:strokecolor="#FE7E9F"
-            app:textsize="15"
-            app:circlesize="200"
+            app:strokecolor="@color/tickle_me_pink"
+            app:textsize="0"
+            app:circlesize="240"
             android:layout_weight="1"
             android:layout_width="300dp"
             android:layout_height="300dp" />
 
         <com.example.huixing.definview.practice06.MyCircleView
+            android:id="@+id/inner"
+            android:layout_gravity="center"
+            app:strokecolor="@color/inch_worm"
+            app:textsize="0"
+            app:circlesize="280"
+            android:layout_weight="1"
+            android:layout_width="400dp"
+            android:layout_height="400dp" />
+
+        <com.example.huixing.definview.practice06.MyCircleView
             android:id="@+id/outer"
             android:layout_gravity="center"
-            app:strokecolor="#FE7E9F"
-            app:textsize="15"
+            app:strokecolor="@color/shamrock"
+            app:textsize="30"
             app:circlesize="320"
             android:layout_weight="1"
             android:layout_width="500dp"

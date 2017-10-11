@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="tickle_me_pink">#FE7E9F</color>
+    <color name="hibiscus">#BB2C78</color>
+    <color name="shamrock">#4AF2A1</color>
+    <color name="tin">#7F7F7F</color>
+    <color name="inch_worm">#B0F566</color>
+
 </resources>
