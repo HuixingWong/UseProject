@@ -17,4 +17,11 @@
         <attr name="strokewidth" format="integer" />
     </declare-styleable>
 
+    <declare-styleable name="CurveView">
+        <!--声明我们的属性，名称为default_size,取值类型为尺寸类型（dp,px等）-->
+
+    </declare-styleable>
+
+
+
 </resources>

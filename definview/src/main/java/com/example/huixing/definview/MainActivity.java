@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     TomatoView clockView;
     TextView textView;
     Button button;
+    Button buttonToLinePoint;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,ToCircleActivity.class));
+            }
+        });
+
+        buttonToLinePoint = (Button) findViewById(R.id.to_point_line);
+
+        buttonToLinePoint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,PointLineActivity.class));
             }
         });
     }
