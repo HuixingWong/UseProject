@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     Button button;
     Button buttonToLinePoint;
+    Button mTosurfacebtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,PointLineActivity.class));
+            }
+        });
+
+        mTosurfacebtn = (Button) findViewById(R.id.tosurface);
+        mTosurfacebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,SurfaceViewActivity.class));
             }
         });
     }

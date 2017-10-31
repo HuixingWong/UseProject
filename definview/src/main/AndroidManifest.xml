@@ -19,6 +19,8 @@
         <activity android:name=".ToCircleActivity"/>
         <activity android:name=".PointLineActivity">
         </activity>
+        <activity android:name=".SurfaceViewActivity">
+        </activity>
     </application>
 
 </manifest>
