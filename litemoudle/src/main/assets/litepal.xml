@@ -6,6 +6,10 @@
     <version value="1" />
 
     <list>
+        <mapping class="com.example.litemoudle.modols.Log" />
+        <mapping class="com.example.litemoudle.modols.Project" />
+        <mapping class="com.example.litemoudle.modols.Scene" />
+        <mapping class="com.example.litemoudle.modols.Tag" />
     </list>
 
 </litepal>
