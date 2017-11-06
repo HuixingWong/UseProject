@@ -2,6 +2,7 @@ package com.example.litemoudle.modols;
 
 import org.litepal.crud.DataSupport;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,7 +14,25 @@ public class Project extends DataSupport {
 
     private int id;
     private String name;
-    private List<Integer> tags_id;
+    private List<Tag> Tags = new ArrayList<>();
+
+    private List<Log> logs = new ArrayList<>();
+
+    public List<Log> getLogs() {
+        return logs;
+    }
+
+    public void setLogs(List<Log> logs) {
+        this.logs = logs;
+    }
+
+    public List<Tag> getTags() {
+        return Tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        Tags = tags;
+    }
 
     public int getId() {
         return id;
@@ -31,11 +50,5 @@ public class Project extends DataSupport {
         this.name = name;
     }
 
-    public List<Integer> getTags_id() {
-        return tags_id;
-    }
 
-    public void setTags_id(List<Integer> tags_id) {
-        this.tags_id = tags_id;
-    }
 }
