@@ -4,6 +4,8 @@ import com.example.litemoudle.modols.Log;
 
 import org.litepal.crud.DataSupport;
 
+import java.util.List;
+
 /**
  * Created by dogoodsoft-app on 2017/11/6.
  */
@@ -32,11 +34,6 @@ public class LogDao {
 
     }
 
-    public void findByProjectId(int projectId){
-
-        DataSupport.where("project_id", String.valueOf(projectId)).find(Log.class);
-
-    }
 
 
 

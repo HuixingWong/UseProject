@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.litemoudle.dao.LogDao;
+import com.example.litemoudle.dao.ProjectDao;
 import com.example.litemoudle.modols.Log;
 import com.example.litemoudle.modols.Project;
 import com.example.litemoudle.modols.Tag;
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button addTag,updateTag;
     private Button addLog,deleteLog;
     private Button addScene;
+
+    private Button mBtnFindlogByProject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +57,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         deleteProject = findViewById(R.id.delete_project);
         deleteProject.setOnClickListener(this);
+
+        mBtnFindlogByProject = findViewById(R.id.find_log_by_projectid);
+        mBtnFindlogByProject.setOnClickListener(this);
+
 
     }
 
@@ -101,10 +109,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 deleteprojects();
                 break;
 
+            case R.id.find_log_by_projectid:
+
+                findlogbyProjectids(1);
+                break;
+
         }
 
     }
 
+    private void findlogbyProjectids(int projectid) {
+
+
+
+    }
 
 
     private void updateTags() {

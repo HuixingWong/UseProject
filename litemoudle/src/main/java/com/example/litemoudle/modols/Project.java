@@ -50,5 +50,11 @@ public class Project extends DataSupport {
         this.name = name;
     }
 
+    public List<Log> getLogs(int id){
+
+        return DataSupport.where("id = ?", String.valueOf(id)).find(Log.class);
+
+    }
+
 
 }
