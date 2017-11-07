@@ -215,7 +215,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void deleteprojects() {
 
 
-        DataSupport.delete(Project.class,1);
+        List<Project> all = DataSupport.findAll(Project.class);
+
+        if (all.size()>0){
+            all.get(0).delete();
+        }
+
 
     }
 
@@ -237,7 +242,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         List<Scene> scenes = DataSupport.where("name = ?", "地铁上").find(Scene.class);
         if (scenes.size()>0){
-            log.setScene(scenes.get(0));
+            Scene scene = scenes.get(0);
+            scene.getList().add(log);
+            scene.update(1);
+
+            log.setScene(scene);
+
         }
 
         log.save();
