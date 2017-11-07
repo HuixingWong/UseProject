@@ -120,7 +120,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void findlogbyProjectids(int projectid) {
 
+        /**
+         * 使用激进查询的方式查到的数据，好处方便，坏处，一下子执行的任务太多
+         * 如果数据量过大，会造成性能不好。
+         */
 
+//        Project project = DataSupport.find(Project.class, projectid, true);
+//        List<Log> logs = project.getLogs();
+//
+//        Toast.makeText(this, ""+logs.size(), Toast.LENGTH_SHORT).show();
+//        for (int i = 0;i<logs.size();i++){
+//
+//            android.util.Log.e("123",logs.get(i).getContent()+logs.get(i).getId());
+//
+//        }
+
+        /**
+         * 第二种查村方式，推荐使用的，不会查到不需要用到的信息。
+         */
+        Project project = DataSupport.find(Project.class, projectid);
+        List<Log> logsbyProjectid = project.getLogsbyProjectid(1);
+        Toast.makeText(this, ""+logsbyProjectid.size(), Toast.LENGTH_SHORT).show();
 
     }
 
@@ -185,9 +205,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             Project project = projects.get(0);
 
-           project.getLogs().add(log);
+            project.getLogs().add(log);
 
-           project.update(1);
+            project.update(1);
 
             log.setProject(project);
         }

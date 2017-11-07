@@ -14,9 +14,9 @@ public class Project extends DataSupport {
 
     private int id;
     private String name;
-    private List<Tag> Tags = new ArrayList<>();
+    private List<Tag> Tags = new ArrayList<Tag>();
 
-    private List<Log> logs = new ArrayList<>();
+    private List<Log> logs = new ArrayList<Log>();
 
     public List<Log> getLogs() {
         return logs;
@@ -50,9 +50,9 @@ public class Project extends DataSupport {
         this.name = name;
     }
 
-    public List<Log> getLogs(int id){
+    public List<Log> getLogsbyProjectid(int id){
 
-        return DataSupport.where("id = ?", String.valueOf(id)).find(Log.class);
+        return DataSupport.where("project_id = ?", String.valueOf(id)).find(Log.class);
 
     }
 

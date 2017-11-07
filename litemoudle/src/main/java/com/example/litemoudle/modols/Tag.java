@@ -13,7 +13,7 @@ public class Tag extends DataSupport {
 
     private int id;
     private String name;
-    private List<Project> projects = new ArrayList<>();
+    private List<Project> projects = new ArrayList<Project>();
 
     public int getId() {
         return id;
