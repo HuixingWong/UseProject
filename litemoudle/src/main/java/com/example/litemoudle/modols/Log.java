@@ -9,8 +9,6 @@ import org.litepal.crud.DataSupport;
 public class Log extends DataSupport {
 
     private int id;
-    private String scene_name;
-    private int scene_id;
 
     private long startime;
     private long lengthtime;
@@ -45,21 +43,6 @@ public class Log extends DataSupport {
     }
 
 
-    public String getScene_name() {
-        return scene_name;
-    }
-
-    public void setScene_name(String scene_name) {
-        this.scene_name = scene_name;
-    }
-
-    public int getScene_id() {
-        return scene_id;
-    }
-
-    public void setScene_id(int scene_id) {
-        this.scene_id = scene_id;
-    }
 
     public long getStartime() {
         return startime;

@@ -59,6 +59,12 @@
         android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/delete_scene"
+        android:text="删除场景"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
         android:id="@+id/find_log_by_projectid"
         android:text="查找log by projectid"
         android:layout_width="match_parent"

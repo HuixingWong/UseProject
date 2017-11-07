@@ -10,6 +10,7 @@ import com.example.litemoudle.dao.LogDao;
 import com.example.litemoudle.dao.ProjectDao;
 import com.example.litemoudle.modols.Log;
 import com.example.litemoudle.modols.Project;
+import com.example.litemoudle.modols.Scene;
 import com.example.litemoudle.modols.Tag;
 
 import org.litepal.crud.DataSupport;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button addTag,updateTag;
     private Button addLog,deleteLog;
     private Button addScene;
+    private Button deleteScene;
 
     private Button mBtnFindlogByProject;
 
@@ -61,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnFindlogByProject = findViewById(R.id.find_log_by_projectid);
         mBtnFindlogByProject.setOnClickListener(this);
 
+        deleteScene = findViewById(R.id.delete_scene);
+        deleteScene.setOnClickListener(this);
 
     }
 
@@ -114,7 +118,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 findlogbyProjectids(1);
                 break;
 
+            case R.id.delete_scene:
+                deleteScenes();
+                break;
+
         }
+
+    }
+
+    private void deleteScenes() {
+
+        List<Scene> scenes = DataSupport.where("name = ?", "地铁上").find(Scene.class);
+        if (scenes.size()>0){
+           scenes.get(0).delete();
+        }
+
 
     }
 
@@ -179,6 +197,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void addScenes() {
+
+
+        Scene scene = new Scene();
+        scene.setName("地铁上");
+        scene.save();
+
     }
 
     private void addProjects() {
@@ -211,6 +235,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             log.setProject(project);
         }
+        List<Scene> scenes = DataSupport.where("name = ?", "地铁上").find(Scene.class);
+        if (scenes.size()>0){
+            log.setScene(scenes.get(0));
+        }
+
         log.save();
 
     }
