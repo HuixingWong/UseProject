@@ -9,12 +9,15 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/androidkotlin" />
+            <option value="$PROJECT_DIR$/azlistview" />
             <option value="$PROJECT_DIR$/datepickeruse" />
             <option value="$PROJECT_DIR$/definview" />
             <option value="$PROJECT_DIR$/designpattern" />
             <option value="$PROJECT_DIR$/doubledatepicker" />
             <option value="$PROJECT_DIR$/floatingrecycleview" />
             <option value="$PROJECT_DIR$/greendaouse" />
+            <option value="$PROJECT_DIR$/iforcerebuild" />
+            <option value="$PROJECT_DIR$/litemoudle" />
             <option value="$PROJECT_DIR$/magicsqure" />
             <option value="$PROJECT_DIR$/mutiltasklisten" />
             <option value="$PROJECT_DIR$/mylibrary" />

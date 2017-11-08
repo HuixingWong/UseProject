@@ -10,7 +10,6 @@ public class Log extends DataSupport {
 
     private int id;
     private String scene_name;
-    private int scene_id;
 
     private long startime;
     private long lengthtime;
@@ -18,15 +17,6 @@ public class Log extends DataSupport {
 
     private Project project;
 
-    private Scene scene;
-
-    public Scene getScene() {
-        return scene;
-    }
-
-    public void setScene(Scene scene) {
-        this.scene = scene;
-    }
 
     public Project getProject() {
         return project;
@@ -53,13 +43,6 @@ public class Log extends DataSupport {
         this.scene_name = scene_name;
     }
 
-    public int getScene_id() {
-        return scene_id;
-    }
-
-    public void setScene_id(int scene_id) {
-        this.scene_id = scene_id;
-    }
 
     public long getStartime() {
         return startime;

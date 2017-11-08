@@ -3,7 +3,7 @@
 
     <dbname value="timebook2" />
 
-    <version value="3" />
+    <version value="1" />
 
     <list>
         <mapping class="com.example.litemoudle.modols.Log" />
