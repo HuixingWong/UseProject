@@ -1,4 +1,4 @@
-package com.example.litemoudle;
+package com.example.litemoudle.testActivitys;
 
 import android.content.res.Configuration;
 import android.os.Bundle;

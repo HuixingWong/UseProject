@@ -1,5 +1,8 @@
 package com.example.litemoudle.dao;
 
+import android.widget.Toast;
+
+import com.example.litemoudle.NyApp;
 import com.example.litemoudle.modols.Project;
 
 import org.litepal.crud.DataSupport;
@@ -20,6 +23,8 @@ public class ProjectDao {
         List<Project> projectByName = findProjectByName(name);
         if (projectByName.size() == 0){
             project.save();
+        }else {
+            Toast.makeText(NyApp.getContext(), "已经存在该项目", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -50,7 +55,13 @@ public class ProjectDao {
 
         List<Project> projects = DataSupport.where("name = ?", name).find(Project.class);
 
-        return projects.get(0);
+        if (projects.size()>0){
+            return projects.get(0);
+        }else {
+
+            return null;
+
+        }
 
     }
 }

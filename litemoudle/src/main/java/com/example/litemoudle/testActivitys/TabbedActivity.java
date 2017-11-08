@@ -1,4 +1,4 @@
-package com.example.litemoudle;
+package com.example.litemoudle.testActivitys;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+
+import com.example.litemoudle.R;
 
 public class TabbedActivity extends AppCompatActivity {
 

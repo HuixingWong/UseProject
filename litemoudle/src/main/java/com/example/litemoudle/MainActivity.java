@@ -1,5 +1,6 @@
 package com.example.litemoudle;
 
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -185,13 +186,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Project project = new Project();
         project.setName("考雅思");
+        Tag tag = new Tag();
+        tag.setName("好学生");
+        tag.save();
+        project.getTags().add(tag);
         project.save();
     }
 
     private void deleteprojects() {
 
 
-        DataSupport.delete(Project.class,1);
+
+
+        List<Project> projects = DataSupport.where("name = ?", "考雅思").find(Project.class);
+        if (projects.size()>0){
+            int id = projects.get(0).getId();
+            DataSupport.delete(Project.class,id);
+        }
+
 
     }
 
