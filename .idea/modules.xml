@@ -4,12 +4,15 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UseProject.iml" filepath="$PROJECT_DIR$/UseProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidkotlin/androidkotlin.iml" filepath="$PROJECT_DIR$/androidkotlin/androidkotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/azlistview/azlistview.iml" filepath="$PROJECT_DIR$/azlistview/azlistview.iml" />
       <module fileurl="file://$PROJECT_DIR$/datepickeruse/datepickeruse.iml" filepath="$PROJECT_DIR$/datepickeruse/datepickeruse.iml" />
       <module fileurl="file://$PROJECT_DIR$/definview/definview.iml" filepath="$PROJECT_DIR$/definview/definview.iml" />
       <module fileurl="file://$PROJECT_DIR$/designpattern/designpattern.iml" filepath="$PROJECT_DIR$/designpattern/designpattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/doubledatepicker/doubledatepicker.iml" filepath="$PROJECT_DIR$/doubledatepicker/doubledatepicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/floatingrecycleview/floatingrecycleview.iml" filepath="$PROJECT_DIR$/floatingrecycleview/floatingrecycleview.iml" />
       <module fileurl="file://$PROJECT_DIR$/greendaouse/greendaouse.iml" filepath="$PROJECT_DIR$/greendaouse/greendaouse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iforcerebuild/iforcerebuild.iml" filepath="$PROJECT_DIR$/iforcerebuild/iforcerebuild.iml" />
+      <module fileurl="file://$PROJECT_DIR$/litemoudle/litemoudle.iml" filepath="$PROJECT_DIR$/litemoudle/litemoudle.iml" />
       <module fileurl="file://$PROJECT_DIR$/magicsqure/magicsqure.iml" filepath="$PROJECT_DIR$/magicsqure/magicsqure.iml" />
       <module fileurl="file://$PROJECT_DIR$/mutiltasklisten/mutiltasklisten.iml" filepath="$PROJECT_DIR$/mutiltasklisten/mutiltasklisten.iml" />
       <module fileurl="file://$PROJECT_DIR$/mylibrary/mylibrary.iml" filepath="$PROJECT_DIR$/mylibrary/mylibrary.iml" />

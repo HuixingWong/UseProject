@@ -113,11 +113,13 @@ public class SurfaceViewL extends SurfaceView implements SurfaceHolder.Callback,
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
 
+                isDrawing = true;
                 mLastX = x;
                 mLastY = y;
                 mPath.moveTo(mLastX, mLastY);
                 break;
             case MotionEvent.ACTION_MOVE:
+
                 float dx = Math.abs(x - mLastX);
                 float dy = Math.abs(y - mLastY);
                 if (dx >= 3 || dy >= 3) {
@@ -127,6 +129,7 @@ public class SurfaceViewL extends SurfaceView implements SurfaceHolder.Callback,
                 mLastY = y;
                 break;
             case MotionEvent.ACTION_UP:
+                isDrawing = false;
                 break;
         }
         return true;
