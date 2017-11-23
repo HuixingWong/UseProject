@@ -22,6 +22,9 @@ public class ChronometerTestActivity extends AppCompatActivity {
 
     public void start(View view) {
 
+        boolean activated = chronometer.isActivated();
+//        boolean countDown = chronometer.isCountDown();
+
         if (mRecordTime == 0l){
             chronometer.setBase(SystemClock.elapsedRealtime());
         }else {
@@ -29,11 +32,16 @@ public class ChronometerTestActivity extends AppCompatActivity {
         }
 
         chronometer.start();
+        boolean activated2 = chronometer.isActivated();
+        boolean activated3 = chronometer.isActivated();
     }
 
     public void pause(View view) {
 
+
         chronometer.stop();
+        boolean activated = chronometer.isActivated();
+//        boolean countDown = chronometer.isCountDown();
         mRecordTime = SystemClock.elapsedRealtime();
     }
 
@@ -42,6 +50,8 @@ public class ChronometerTestActivity extends AppCompatActivity {
         chronometer.stop();
         mRecordTime = 0l;
         chronometer.setBase(SystemClock.elapsedRealtime());
+        boolean activated = chronometer.isActivated();
+//        boolean countDown = chronometer.isCountDown();
     }
 
     public void other(View view) {
