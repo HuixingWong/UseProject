@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.litemoudle">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <application
         android:name=".NyApp"
         android:allowBackup="true"
@@ -13,54 +10,54 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".testActivitys.MainProjectActivity" />
-        <activity
-            android:name=".testActivitys.BasicActivityTest"
-            android:label="@string/title_activity_basic_test"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".testActivitys.ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".testActivitys.NavigationDrawerActivity"
-            android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".testActivitys.TabbedActivity"
-            android:label="@string/title_activity_tabbed"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".testActivitys.ItemListActivity"
-            android:label="@string/title_item_list"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".testActivitys.ItemDetailActivity"
-            android:label="@string/title_item_detail"
-            android:parentActivityName=".testActivitys.ItemListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.litemoudle.testActivitys.ItemListActivity" />
-        </activity>
-        <activity
-            android:name=".testActivitys.BottomNavigationActivity"
-            android:label="@string/title_activity_bottom_navigation" />
-        <activity
-            android:name=".testActivitys.SettingsActivity"
-            android:label="@string/title_activity_settings" />
-        <activity android:name=".AddDataActivity">
-
-        </activity>
-        <activity android:name=".FirstActivity">
+        <activity android:name=".MainActivity" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
+        </activity>
+        <activity android:name=".MainProjectActivity" />
+        <activity
+            android:name=".BasicActivityTest"
+            android:label="@string/title_activity_basic_test"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NavigationDrawerActivity"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TabbedActivity"
+            android:label="@string/title_activity_tabbed"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ItemListActivity"
+            android:label="@string/title_item_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ItemDetailActivity"
+            android:label="@string/title_item_detail"
+            android:parentActivityName=".ItemListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.litemoudle.ItemListActivity" />
+        </activity>
+        <activity
+            android:name=".BottomNavigationActivity"
+            android:label="@string/title_activity_bottom_navigation">
+
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings">
         </activity>
     </application>
 

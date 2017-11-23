@@ -1,6 +1,5 @@
 package com.example.litemoudle;
 
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +10,7 @@ import com.example.litemoudle.dao.LogDao;
 import com.example.litemoudle.dao.ProjectDao;
 import com.example.litemoudle.modols.Log;
 import com.example.litemoudle.modols.Project;
+import com.example.litemoudle.modols.Scene;
 import com.example.litemoudle.modols.Tag;
 
 import org.litepal.crud.DataSupport;
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button addTag,updateTag;
     private Button addLog,deleteLog;
     private Button addScene;
+    private Button deleteScene;
 
     private Button mBtnFindlogByProject;
 
@@ -62,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnFindlogByProject = findViewById(R.id.find_log_by_projectid);
         mBtnFindlogByProject.setOnClickListener(this);
 
+        deleteScene = findViewById(R.id.delete_scene);
+        deleteScene.setOnClickListener(this);
 
     }
 
@@ -115,7 +118,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 findlogbyProjectids(1);
                 break;
 
+            case R.id.delete_scene:
+                deleteScenes();
+                break;
+
         }
+
+    }
+
+    private void deleteScenes() {
+
+        List<Scene> scenes = DataSupport.where("name = ?", "地铁上").find(Scene.class);
+        if (scenes.size()>0){
+           scenes.get(0).delete();
+        }
+
 
     }
 
@@ -180,28 +197,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void addScenes() {
+
+
+        Scene scene = new Scene();
+        scene.setName("地铁上");
+        scene.save();
+
     }
 
     private void addProjects() {
 
         Project project = new Project();
         project.setName("考雅思");
-        Tag tag = new Tag();
-        tag.setName("好学生");
-        tag.save();
-        project.getTags().add(tag);
         project.save();
     }
 
     private void deleteprojects() {
 
 
+        List<Project> all = DataSupport.findAll(Project.class);
 
-
-        List<Project> projects = DataSupport.where("name = ?", "考雅思").find(Project.class);
-        if (projects.size()>0){
-            int id = projects.get(0).getId();
-            DataSupport.delete(Project.class,id);
+        if (all.size()>0){
+            all.get(0).delete();
         }
 
 
@@ -223,6 +240,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             log.setProject(project);
         }
+        List<Scene> scenes = DataSupport.where("name = ?", "地铁上").find(Scene.class);
+        if (scenes.size()>0){
+            Scene scene = scenes.get(0);
+            scene.getList().add(log);
+            scene.update(1);
+
+            log.setScene(scene);
+
+        }
+
         log.save();
 
     }
