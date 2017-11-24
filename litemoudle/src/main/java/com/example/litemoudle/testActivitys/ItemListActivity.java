@@ -1,4 +1,4 @@
-package com.example.litemoudle;
+package com.example.litemoudle.testActivitys;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import com.example.litemoudle.R;
 import com.example.litemoudle.dummy.DummyContent;
 
 import java.util.List;

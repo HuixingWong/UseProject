@@ -1,4 +1,4 @@
-package com.example.litemoudle;
+package com.example.litemoudle.testActivitys;
 
 import android.app.Activity;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.litemoudle.R;
 import com.example.litemoudle.dummy.DummyContent;
 
 /**

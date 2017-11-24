@@ -1,5 +1,8 @@
 package com.example.litemoudle.dao;
 
+import android.widget.Toast;
+
+import com.example.litemoudle.NyApp;
 import com.example.litemoudle.modols.Scene;
 import org.litepal.crud.DataSupport;
 
@@ -19,6 +22,8 @@ public class SceneDao {
 
             scene.save();
 
+        }else {
+            Toast.makeText(NyApp.getContext(), "已经存在该场景", Toast.LENGTH_SHORT).show();
         }
 
 
