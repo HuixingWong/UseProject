@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/UseProject.iml" filepath="$PROJECT_DIR$/UseProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidkotlin/androidkotlin.iml" filepath="$PROJECT_DIR$/androidkotlin/androidkotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/azlistview/azlistview.iml" filepath="$PROJECT_DIR$/azlistview/azlistview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dagger2project/dagger2project.iml" filepath="$PROJECT_DIR$/dagger2project/dagger2project.iml" />
       <module fileurl="file://$PROJECT_DIR$/datepickeruse/datepickeruse.iml" filepath="$PROJECT_DIR$/datepickeruse/datepickeruse.iml" />
       <module fileurl="file://$PROJECT_DIR$/definview/definview.iml" filepath="$PROJECT_DIR$/definview/definview.iml" />
       <module fileurl="file://$PROJECT_DIR$/designpattern/designpattern.iml" filepath="$PROJECT_DIR$/designpattern/designpattern.iml" />

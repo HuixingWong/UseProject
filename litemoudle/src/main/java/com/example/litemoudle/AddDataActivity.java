@@ -293,7 +293,7 @@ public class AddDataActivity extends AppCompatActivity implements View.OnClickLi
                 }
 
                 if (null != scenename){
-                    log.setScene_name(scenename);
+//                    log.setScene_name(scenename);
                 }
 
                 ProjectDao projectDao1 = new ProjectDao();
