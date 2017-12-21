@@ -34,6 +34,11 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.squareup.okhttp3:okhttp:3.9.0'
+    compile "android.arch.lifecycle:runtime:1.0.0-alpha1"
+    compile "android.arch.lifecycle:extensions:1.0.0-alpha1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.0.0-alpha1"
+
+
     testCompile 'com.squareup.okhttp3:mockwebserver:3.9.0'
     testCompile 'junit:junit:4.12'
     compile files('libs/poi-3.17.jar')

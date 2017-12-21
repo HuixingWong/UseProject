@@ -1,6 +1,5 @@
 package com.example.litemoudle;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,12 +20,11 @@ import org.litepal.crud.DataSupport;
 
 import java.util.List;
 
-public class AddDataActivity extends AppCompatActivity implements View.OnClickListener {
+public class AddDataActivity extends AppCompatActivity implements View.OnClickListener{
 
     private EditText mName,mStart,mLength,mContent,mScene,mRename,mAddTag,mAddProjec,mType;
 
     private Button mAdd,mDelete,mUpdate,mfind;
-
     private int DATATYPE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
